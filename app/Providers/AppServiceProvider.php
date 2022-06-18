@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(\App\Contracts\Managers\DeliveryContract::class, function () {
+            return new \App\Managers\DeliveryManager();
+        });
     }
 
     /**
